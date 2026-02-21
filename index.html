@@ -36,46 +36,45 @@
   .line:nth-child(2) { animation-delay: 0.08s; }
   .line:nth-child(3) { animation-delay: 0.16s; }
 
-  /* Image stack - overlapping offset like reference */
   .image-stack {
     position: fixed;
     right: 40px;
     top: 50%;
     transform: translateY(-50%);
-    width: 260px;
-    height: 320px;
+    width: 560px;
+    height: 520px;
     animation: fadein 1s ease 0.5s both;
     z-index: 5;
   }
 
   .image-stack img {
     position: absolute;
-    width: 210px;
     display: block;
-    transition: transform 0.3s ease, z-index 0s;
+    transition: transform 0.3s ease;
   }
 
-  /* Top image - offset upper right */
+  /* Top image - upper right, larger */
   .image-stack img:nth-child(1) {
+    width: 420px;
     top: 0;
     right: 0;
     z-index: 2;
-    filter: grayscale(15%);
+    filter: grayscale(10%);
   }
 
-  /* Bottom image - offset lower left, partially behind */
+  /* Bottom image - lower left, smaller, partially behind */
   .image-stack img:nth-child(2) {
+    width: 280px;
     bottom: 0;
     left: 0;
     z-index: 1;
-    width: 160px;
-    filter: grayscale(15%);
+    filter: grayscale(10%);
   }
 
   .image-stack img:hover {
     filter: grayscale(0%);
     z-index: 10;
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
 
   .tagline {
